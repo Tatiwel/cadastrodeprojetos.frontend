@@ -21,7 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <h2>Criar Projeto</h2>
-<form method="POST">
+<div class="form-container">
+  <form method="POST">
+  <form method="POST">
   <div class="mb-3">
     <label class="form-label">Nome</label>
     <input type="text" name="name" class="form-control" required>
@@ -41,5 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <button type="submit" class="btn btn-primary me-2">Salvar</button>
   <a href="home.php" class="btn btn-secondary">Voltar</a>
 </form>
+  </form>
+</div>
+
 
 <?php include '../includes/footer.php'; ?>

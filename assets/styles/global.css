@@ -18,3 +18,32 @@
 .status.Finalizado {
   color: #dc3545; /* Bootstrap's text-danger */
 }
+
+/* Estilo centralizado para formulários */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs mais elegantes e responsivos */
+.form-control,
+.form-select,
+textarea {
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
