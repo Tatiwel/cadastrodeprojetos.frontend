@@ -43,9 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="mb-3">
     <label class="form-label">Status</label>
     <select name="status" class="form-control">
-      <option value="ativo" <?= $project['status'] === 'ativo' ? 'selected' : '' ?>>Ativo</option>
-      <option value="pausado" <?= $project['status'] === 'pausado' ? 'selected' : '' ?>>Pausado</option>
-      <option value="finalizado" <?= $project['status'] === 'finalizado' ? 'selected' : '' ?>>Finalizado</option>
+      <option value="Ativo" <?= $project['status'] === 'Ativo' ? 'selected' : '' ?>>Ativo</option>
+      <option value="Pausado" <?= $project['status'] === 'Pausado' ? 'selected' : '' ?>>Pausado</option>
+      <option value="Finalizado" <?= $project['status'] === 'Finalizado' ? 'selected' : '' ?>>Finalizado</option>
     </select>
   </div>
   <button type="submit" class="btn btn-primary me-2">Atualizar</button>

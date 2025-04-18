@@ -11,10 +11,8 @@ if (!$id) {
     exit;
 }
 
-// Chama a API para buscar os dados do projeto
 $project = api_get("/projects/$id");
 
-// Caso a API não retorne nada (projeto não encontrado)
 if (!$project) {
     echo "<p>Projeto não encontrado.</p>";
     include '../includes/footer.php';
@@ -31,7 +29,8 @@ if (!$project) {
     <p><strong>Descrição:</strong> <?= htmlspecialchars($project['description']) ?: 'Não informada' ?></p>
     <p><strong>Status:</strong>
       <span class="badge bg-<?php
-        echo $project['status'] === 'ativo' ? 'success' : ($project['status'] === 'pausado' ? 'warning' : 'secondary');
+        echo $project['status'] === 'Ativo' ? 'success' :
+        ($project['status'] === 'Pausado' ? 'warning' : 'secondary');
       ?>">
         <?= ucfirst($project['status']) ?>
       </span>

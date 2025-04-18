@@ -1,0 +1,24 @@
+/* vertical-align: inherit;
+th {
+  vertical-align: inherit;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333333;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+} */
+
+.btn-actions {
+  margin-inline: 0.5rem;
+}
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+.col-actions {
+  max-width: 100px;
+}

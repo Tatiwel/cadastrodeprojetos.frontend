@@ -30,9 +30,12 @@ $projects = api_get("/projects");
 <h2>Projetos</h2>
 <a href="create-project.php" class="btn btn-success mb-3">Criar Novo Projeto</a>
 
-<table class="table table-striped">
+<table class="table table-striped table-bordered table-fit">
   <thead>
     <tr>
+      <!-- nova coluna de contador -->
+      <th>#</th>
+
       <th>ID</th>
       <th>Nome</th>
       <th>Status</th>
@@ -40,20 +43,31 @@ $projects = api_get("/projects");
     </tr>
   </thead>
   <tbody>
-    <?php foreach ($projects as $project): ?>
-    <tr>
-      <td><?= $project['id'] ?></td>
-      <td><?= $project['name'] ?></td>
-      <td><?= $project['status'] ?></td>
-      <td>
-        <a href="project-details.php?id=<?= $project['id'] ?>" class="btn btn-info btn-sm">Detalhes</a>
-        <a href="edit-project.php?id=<?= $project['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
-        <a href="delete-project.php?id=<?= $project['id'] ?>" class="btn btn-danger btn-sm"
-          onclick="return confirm('Deseja deletar este projeto?');">Deletar</a>
-      </td>
-    </tr>
+    <!-- capturamos o índice no foreach -->
+    <?php foreach ($projects as $index => $project): ?>
+      <tr>
+        <!-- exibe o contador (começa em 1) -->
+        <td><?= $index + 1 ?></td>
+
+        <!-- colunas já existentes -->
+        <td><?= $project['id'] ?></td>
+        <td><?= $project['name'] ?></td>
+        <td><?= $project['status'] ?></td>
+        <td class="col-actions">
+          <a href="project-details.php?id=<?= $project['id'] ?>"
+            class="btn btn-info btn-sm btn-actions">Detalhes</a>
+          <a href="edit-project.php?id=<?= $project['id'] ?>"
+            class="btn btn-warning btn-sm btn-actions">Editar</a>
+          <a href="delete-project.php?id=<?= $project['id'] ?>"
+            class="btn btn-danger btn-sm btn-actions"
+            onclick="return confirm('Deseja deletar este projeto?');">
+            Deletar
+          </a>
+        </td>
+      </tr>
     <?php endforeach; ?>
   </tbody>
 </table>
+
 
 <?php include '../includes/footer.php'; ?>

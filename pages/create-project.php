@@ -33,9 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="mb-3">
     <label class="form-label">Status</label>
     <select name="status" class="form-control">
-      <option value="ativo">Ativo</option>
-      <option value="pausado">Pausado</option>
-      <option value="finalizado">Finalizado</option>
+      <option value="Ativo">Ativo</option>
+      <option value="Pausado">Pausado</option>
+      <option value="Finalizado">Finalizado</option>
     </select>
   </div>
   <button type="submit" class="btn btn-primary me-2">Salvar</button>
