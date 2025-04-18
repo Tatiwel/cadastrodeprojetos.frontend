@@ -3,10 +3,20 @@ include '../includes/header.php';
 include '../api/project_api.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = ['name' => $_POST['name'], 'description' => $_POST['description'], 'status' => $_POST['status']];
-    api_post("/projects", $data);
-    header("Location: home.php");
-    exit;
+  $data = ['name' => $_POST['name'],
+  'description' => $_POST['description'],
+  'status' => $_POST['status']
+];
+  try {
+  api_post("/projects", $data);
+  header("Location: home.php?status=success");
+  exit;
+} catch (Exception $e) {
+  header("Location: home.php?status=error");
+  exit;
+}
+  header("Location: home.php");
+  exit;
 }
 ?>
 
@@ -28,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <option value="finalizado">Finalizado</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary">Salvar</button>
+  <button type="submit" class="btn btn-primary me-2">Salvar</button>
+  <a href="home.php" class="btn btn-secondary">Voltar</a>
 </form>
 
 <?php include '../includes/footer.php'; ?>

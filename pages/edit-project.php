@@ -17,9 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'description' => $_POST['description'],
         'status' => $_POST['status']
     ];
-    api_put("/projects/$id", $data);
-    header("Location: home.php");
-    exit;
+    try {
+      api_put("/projects/$id", $data);
+      header("Location: home.php?status=success");
+      exit;
+  } catch (Exception $e) {
+      header("Location: home.php?status=error");
+      exit;
+  }
+      header("Location: home.php");
+      exit;
 }
 ?>
 
@@ -41,7 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <option value="finalizado" <?= $project['status'] === 'finalizado' ? 'selected' : '' ?>>Finalizado</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary">Atualizar</button>
+  <button type="submit" class="btn btn-primary me-2">Atualizar</button>
+  <a href="home.php" class="btn btn-secondary">Voltar</a>
 </form>
 
 <?php include '../includes/footer.php'; ?>

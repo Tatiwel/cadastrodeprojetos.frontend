@@ -4,6 +4,29 @@ include '../api/project_api.php';
 $projects = api_get("/projects");
 ?>
 
+<?php if (isset($_GET['status'])): ?>
+  <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+    <?php
+      if ($_GET['status'] === 'success') {
+        echo "Ação realizada com sucesso!";
+      } elseif ($_GET['status'] === 'error') {
+        echo "Ocorreu um erro ao processar a ação.";
+      }
+    ?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+  </div>
+<?php endif; ?>
+
+<script>
+  setTimeout(function () {
+    let alert = document.querySelector('.alert');
+    if (alert) {
+      alert.classList.remove('show');
+      alert.classList.add('hide');
+    }
+  }, 4000);
+</script>
+
 <h2>Projetos</h2>
 <a href="create-project.php" class="btn btn-success mb-3">Criar Novo Projeto</a>
 
