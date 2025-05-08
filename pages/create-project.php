@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   'status' => $_POST['status']
 ];
   try {
-  api_post("/projects", $data);
+  api_post("/projects/", $data);
   header("Location: home.php?status=success");
   exit;
 } catch (Exception $e) {

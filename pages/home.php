@@ -1,7 +1,7 @@
 <?php include '../includes/header.php';
 include '../api/project_api.php';
 
-$projects = api_get("/projects");
+$projects = api_get("/projects/");
 ?>
 
 <?php if (isset($_GET['status'])): ?>

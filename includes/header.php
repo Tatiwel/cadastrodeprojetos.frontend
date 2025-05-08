@@ -1,6 +1,6 @@
 <?php
 // Faz a requisição para a API FastAPI
-$api_url = "http://127.0.0.1:8000/projects-status";
+$api_url = "http://127.0.0.1:8000/projects/projects-status";
 $response = @file_get_contents($api_url);
 $data = $response ? json_decode($response, true) : [];
 
